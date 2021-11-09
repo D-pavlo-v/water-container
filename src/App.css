@@ -63,7 +63,7 @@ button{
 
 }
 
-p {
+.measure__stats {
   margin: 0 auto;
   position: sticky;
   bottom: 0;

@@ -18,7 +18,7 @@ function App() {
         : !isIncrease && waterVolume > emptyValue 
           ? setWaterVolume((prevVolume) => prevVolume - step)
           : setWaterVolume(waterVolume)
-    }, interval)
+    }, interval)                          
     return () => clearInterval(delay)
   }, [waterVolume, isIncrease])
 
@@ -31,24 +31,24 @@ function App() {
 
         </div>
         <p className="measure__stats">
-              {waterVolume + '%'}
-              <br />
-              {
-                isIncrease && waterVolume < fullValue
-                  ? 'increasing'
-                  : !isIncrease && waterVolume > emptyValue 
-                    ? 'decreasing'
-                    : waterVolume
-                      ? 'full'
-                      : 'empty'
-              }
-            </p>
+          {waterVolume + '%'}
+          <br />
+          {
+            isIncrease && waterVolume < fullValue
+              ? 'increasing'
+              : !isIncrease && waterVolume > emptyValue 
+                ? 'decreasing'
+                : waterVolume
+                  ? 'full'
+                  : 'empty'
+          }
+        </p>
         <div className="water-button-group">
           <button className='water-volume__increment' onClick={() => setIsIncrease(true)}>
-            fill
+            increaseWaterLevel
           </button>
           <button className='water-volume__decrement' onClick={() => setIsIncrease(false)}>
-            empty
+            decreaseWaterLevel
           </button>
         </div>
       </div>
